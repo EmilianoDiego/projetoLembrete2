@@ -4,3 +4,8 @@ main {
   margin-left: auto;
   margin-right: auto;
 }
+#imgfundo{
+  background-image: url('/assets/img/tela1.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
