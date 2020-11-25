@@ -1,7 +1,20 @@
-<mat-card>
-  <form (submit)="onAdicionarLembrete(lembreteForm)" #lembreteForm="ngForm">
-    <mat-form-field>
-      <input
+<!--container geral-->
+<div class="container-fluid">
+  <div class="row col-12 col-md-12 my-3">
+    <!--bloco do titulo agenda-->
+    <div class=" col-12   ">
+      <p id="tituloagenda">AGENDA</p>
+      <p id="frase">Ola -nome-, organize sua vida com mais facilidade</p>
+      <p id="horario">{{data|date:'h:mm a '}}</p>
+      <p id="data" >{{data|date:"dd/MMMM/yyy"}}</p>
+    </div>
+
+    <div class="col-12 " style="border-radius: 5px; background-color: aliceblue;">
+
+  <!--form para digitar o lembrete-->
+  <form (submit)="onAdicionarLembrete(lembreteForm)" #lembreteForm="ngForm" >
+    <mat-form-field  style=";background-color: aliceblue;">
+      <input 
         type="text"
         matInput
         placeholder="Digite o titulo do lembrete"
@@ -14,8 +27,8 @@
       />
       <mat-error *ngIf="titulo.invalid">Digite o titulo do lembrete válido</mat-error>
     </mat-form-field>
-
-    <mat-form-field>
+    <!--form para data lembrete-->
+    <mat-form-field class="col-6 " style=";background-color: aliceblue;">
       <input
         type="date"
         matInput
@@ -28,8 +41,9 @@
       />
       <mat-error *ngIf="dataCadastro.invalid">Digite uma data de cadastro válida</mat-error>
     </mat-form-field>
-
-    <mat-form-field>
+    <!--form para data lembrete-->
+  
+    <mat-form-field class="col-6 " style="background-color: aliceblue;">
       <input
         type="date"
         matInput
@@ -42,8 +56,10 @@
       />
       <mat-error *ngIf="dataPrevista.invalid">Digite uma data prevista válida<</mat-error>
     </mat-form-field>
+  
+  <!--form para atividade lembrete-->
 
-    <mat-form-field>
+    <mat-form-field  style=";background-color: aliceblue;">
       <input
         type="text"
         matInput
@@ -56,9 +72,16 @@
       />
       <mat-error *ngIf="atividade.invalid">Digite uma atividade válida</mat-error>
     </mat-form-field>
-
-    <button color="accent" mat-raised-button>
+  
+  <!--botao-->
+    
+    <button appEfeitoSombra type="button" class="my-2" style="background-color:rgb(154, 154, 243);">
       Inserir Lembrete
     </button>
+  
+  
   </form>
-</mat-card>
+
+</div>
+</div>
+</div>
