@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { LembreteListaComponent } from './lembretes/lembrete-lista/lembrete-lista.component'
 import { LembreteInserirComponent } from './lembretes/lembrete-inserir/lembrete-inserir.component';
+import { PaginaLembreteComponent } from './paginas/pagina-lembrete/pagina-lembrete.component';
+import { EfeitoSombraDirective } from './efeito-sombra.directive';
 
 const routes: Routes = [
   { path: '', component: LembreteListaComponent },
@@ -28,7 +30,9 @@ const routes: Routes = [
     AppComponent,
     LembreteInserirComponent,
     CabecalhoComponent,
-    LembreteListaComponent
+    LembreteListaComponent,
+    PaginaLembreteComponent,
+    EfeitoSombraDirective
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,7 @@ const routes: Routes = [
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })
   ],
 
   exports: [

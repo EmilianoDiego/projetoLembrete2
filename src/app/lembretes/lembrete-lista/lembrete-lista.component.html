@@ -1,17 +1,38 @@
-<mat-accordion *ngIf="lembretes.length > 0">
-  <mat-expansion-panel *ngFor="let lembrete of lembretes">
-    <mat-expansion-panel-header>TituloLembrete: {{ lembrete.titulo }}</mat-expansion-panel-header>
-    <p>DataCadastro: {{ lembrete.dataCadastro }}</p>
-    <hr />
-    <p>DataPrevista: {{ lembrete.dataPrevista }}</p>
-    <hr />
-    <p>Atividade: {{ lembrete.atividade }}</p>
+<div class="container-fluid my-1 border" style="background-image: url('./assets/img/folha.jpg')">
+  <div class="col my-3 border">
+<mat-accordion  *ngIf="lembretes.length > 0">
+  <mat-expansion-panel  class="my-2" *ngFor="let lembrete of lembretes">
+    <mat-expansion-panel-header >
+      <!--titulo do lembrete-->
+      <p style="font-weight: bold;">Titulo Lembrete: </p>
+      {{ lembrete.titulo }}</mat-expansion-panel-header>
+    <div class="row border" >
+      <!--data cadastro do lembrete-->
+      <div class="col-6 ">
+        <a style="font-weight: bold;">Data Cadastro:</a>
+      <p> {{ lembrete.dataCadastro }}</p>
+      </div>
+      <!--data prevista do lembrete-->  
+    <div class="col-6 ">
+     <a style="font-weight: bold;">Data Prevista:</a><br>
+     <P>{{ lembrete.dataPrevista }}</P>
+    </div>
+    <!--atividade do lembrete--> 
+    <div class="col-12 border">
+    <a style="font-weight: bold;">Atividade: </a>
+    <p>{{ lembrete.atividade }}</p>
+    </div>
+  </div>
     <mat-action-row>
-      <button mat-button color="primary" [routerLink]="['/editar', lembrete.id]">EDITAR</button>
-      <button mat-button color="warn" (click)="onDelete(lembrete.id)" >REMOVER</button>
+      <button mat-button color="primary">EDITAR</button>
+      <button mat-button color="warn">REMOVER</button>
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
 <p class="mat-body-1" style="text-align: center;" *ngIf="lembretes.length <= 0">
   Nenhum lembrete cadastrado
 </p>
+</div>
+</div>
+
+
