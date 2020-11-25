@@ -25,10 +25,12 @@
   </div>
     <mat-action-row class="col-12 ">
       <div class="col-5">
-      <button appEfeitoSombra type="button" style="background-color: chartreuse;border-radius: 6px;" >EDITAR</button>
+      <button appEfeitoSombra type="button" style="background-color: chartreuse;border-radius: 6px;"
+       [routerLink]="['/editar', lembrete.id]">EDITAR</button>
       </div>
       <div class="col-5">
-      <button appEfeitoSombra type="button" style="background-color: rgb(238, 102, 12);">REMOVER</button>
+      <button appEfeitoSombra type="button" style="background-color: rgb(238, 102, 12);" 
+      (click)="onDelete(lembrete.id)">REMOVER</button>
       </div>
     </mat-action-row>
   </mat-expansion-panel>
