@@ -1,19 +1,24 @@
-import { Directive,Input,HostListener,HostBinding } from '@angular/core';
+import { Directive,HostListener,Renderer2,ElementRef} from '@angular/core';
 
 @Directive({
   selector: '[appEfeitoSombra]'
 })
 export class EfeitoSombraDirective {
 
-  @Input('appSombraTela')sombraEntrada:string;
+  constructor(
+    private elementRef:ElementRef,
+    private renderer:Renderer2
+  ) {}
 
-  @HostBinding('style.boxShadow')sombra:string;
- 
-  @HostListener('mouseover')quandoMouseCima(){
-    this.sombra=this.sombraEntrada;
+   @HostListener('mouseover')quandoMousePorCima(){
+    this.renderer.setStyle(
+      this.elementRef.nativeElement,
+      'box-shadow','2px 3px'
+    )
   }
   @HostListener('mouseleave')quandoMouseSair(){
-    this.sombra="";
+    this.renderer.removeStyle(
+      this.elementRef.nativeElement,
+      'box-shadow')
   }
-
 }

@@ -1,31 +1,35 @@
-<div class="container-fluid my-1 border" style="background-image: url('./assets/img/folha.jpg')">
-  <div class="col my-3 border">
+<div class="container-fluid my-2" id="imgcontainer">
+  <div class="col my-3 pt-4 ">
 <mat-accordion  *ngIf="lembretes.length > 0">
-  <mat-expansion-panel  class="my-2" *ngFor="let lembrete of lembretes">
+  <mat-expansion-panel appEfeitoSombra class="my-3" *ngFor="let lembrete of lembretes">
     <mat-expansion-panel-header >
       <!--titulo do lembrete-->
-      <p style="font-weight: bold;">Titulo Lembrete: </p>
+      <p style="font-weight: bold;">Titulo Lembrete : </p>
       {{ lembrete.titulo }}</mat-expansion-panel-header>
-    <div class="row border" >
+    <div class="row " >
       <!--data cadastro do lembrete-->
-      <div class="col-6 ">
-        <a style="font-weight: bold;">Data Cadastro:</a>
+      <div class="col-6 border "style="border-radius: 10px;">
+        <a style="font-weight: bold;" >Data Cadastro:</a>
       <p> {{ lembrete.dataCadastro }}</p>
       </div>
       <!--data prevista do lembrete-->  
-    <div class="col-6 ">
+    <div class="col-6 border " style="border-radius: 10px;" >
      <a style="font-weight: bold;">Data Prevista:</a><br>
      <P>{{ lembrete.dataPrevista }}</P>
     </div>
     <!--atividade do lembrete--> 
-    <div class="col-12 border">
+    <div class="col-12 border my-2 "style="border-radius: 10px;">
     <a style="font-weight: bold;">Atividade: </a>
     <p>{{ lembrete.atividade }}</p>
     </div>
   </div>
-    <mat-action-row>
-      <button mat-button color="primary">EDITAR</button>
-      <button mat-button color="warn">REMOVER</button>
+    <mat-action-row class="col-12 ">
+      <div class="col-5">
+      <button appEfeitoSombra type="button" style="background-color: chartreuse;border-radius: 6px;" >EDITAR</button>
+      </div>
+      <div class="col-5">
+      <button appEfeitoSombra type="button" style="background-color: rgb(238, 102, 12);">REMOVER</button>
+      </div>
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
