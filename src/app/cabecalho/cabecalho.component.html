@@ -2,7 +2,8 @@
     <span><a routeLink="/">LISTAR LEMBRETES</a></span>    
     <span class="separador"></span>
     <ul>
-        <li><a mat-button routerLink="/criar" routerLinkActive="mat-accent">NOVO LEMBRETE</a></li>         
+        <li style="float: left; margin-right: 15px;"><a mat-button routerLink="/criar" routerLinkActive="mat-accent">NOVO LEMBRETE</a></li>        
+        <li style="float: left;"><a (click)="logout()" href="" >SAIR</a></li>          
     </ul>
 
 </mat-toolbar>

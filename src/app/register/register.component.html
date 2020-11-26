@@ -1,0 +1,93 @@
+<div
+  style="
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  "
+>
+  <div
+    style="
+      border-radius: 5px;
+      box-shadow: 0px 1px 5px grey;
+      max-width: 250px;
+      height: 350px;
+      background-color: #c0c0c0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    "
+  >
+    <h6
+      style="
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      "
+    >
+      Registrar-se
+    </h6>
+    <input
+      [(ngModel)]="email"
+      type="text"
+      placeholder="E-mail"
+      style="
+        width: 80%;
+        margin: 15px 0;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        outline: none;
+      "
+    />
+    <input
+      [(ngModel)]="password"
+      type="password"
+      placeholder="Senha"
+      style="
+        width: 80%;
+        margin: 15px 0;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        outline: none;
+      "
+    />
+
+    <button
+      (click)="auth()"
+      style="
+        background: #000000;
+        color: white;
+        border: 0.1px solid black;
+        border-radius: 3px;
+        width: 80%;
+        margin: 15px 0;
+      "
+    >
+      CRIAR CONTA
+    </button>
+  </div>
+
+  <div
+    [hidden]="!error"
+    style="
+      border-radius: 5px;
+      box-shadow: 0px 1px 5px grey;
+      max-width: 250px;
+      min-width: 50px;
+      margin-top: 15px;
+      height: 80px;
+      background-color: #ff6961;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      padding: 0 10px
+    "
+  >
+    {{ errorMessage }}
+  </div>
+</div>

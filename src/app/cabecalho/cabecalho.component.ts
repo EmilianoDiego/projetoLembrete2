@@ -12,4 +12,8 @@ export class CabecalhoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout() {
+    localStorage.clear();
+  }
+
 }
